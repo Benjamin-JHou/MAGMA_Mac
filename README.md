@@ -1,36 +1,31 @@
-# 🌋 MAGMA_Mac
-
+# MAGMA_Mac
+![Image text](https://user-images.githubusercontent.com/147773802/278640350-52513be5-1e74-4db1-928e-31b673f8c47a.png)
 MAGMA_Mac is an extensively used tool for gene-based analysis, gene-set enrichment analysis, and gene property analysis. 
 
-# MAGMA Gene Visualization Guide 🌋
+---
+# 🌋 MAGMA Gene Visualization Guide
 
 This guide provides an overview of the visualization techniques used for the gene identity analysis and Gene Ontology (GO) enrichment results based on the MAGMA analysis.
 
-## Gene Identity Analysis
-
-The gene identity analysis visualizes the gene expression levels across different tissue types. The visualization highlights the average expression values and uses a brown line to indicate the Bonferroni threshold. Genes with expression levels above this threshold are of particular interest, as they may be more strongly associated with the phenotype under study.
+1. Gene Identity Analysis  visualization: the gene expression levels across different tissue types. The visualization highlights the average expression values and uses a brown line to indicate the Bonferroni threshold. Genes with expression levels above this threshold are of particular interest, as they may be more strongly associated with the phenotype under study.
 
 [🔗 View the Gene Identity Analysis Script](https://github.com/Benjamin-JHou/MAGMA_Mac/blob/main/gene_identity.R)
 
-## Gene Ontology (GO) Enrichment
-
-The GO enrichment visualization helps in understanding the functional aspects of the genes of interest. It categorizes genes based on their involvement in various biological processes, cellular components, and molecular functions. Genes are grouped by their GO terms, and the significance of each term is denoted by its p-value. A brown line on the visualization represents the Bonferroni threshold, aiding in the identification of significantly enriched terms.
+2. Gene Ontology (GO) Enrichment visualization: which helps in understanding the functional aspects of the genes of interest. It categorizes genes based on their involvement in various biological processes, cellular components, and molecular functions. Genes are grouped by their GO terms, and the significance of each term is denoted by its p-value. A brown line on the visualization represents the Bonferroni threshold, aiding in the identification of significantly enriched terms.
 
 [🔗 View the GO Enrichment Script](https://github.com/Benjamin-JHou/MAGMA_Mac/blob/main/GO_enrichment.R)
 
----
-
 For more details on MAGMA and its applications, refer to the official [MAGMA documentation](https://ctg.cncr.nl/software/magma).
 
-
+---
 ## 📊 Required data: a file containing SNP locations and a file containing gene locations.
-
+---
 ## 🍏 Installing MAGMA on Mac
 
 1. Download the Mac version of MAGMA. [Download the ZIP file](https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.10_mac.zip)
 2. Unzip the downloaded file.
 3. Move the MAGMA binary to an appropriate directory and ensure directory in system path.
-
+---
 ## 📖 Annotation with MAGMA
 
 Reference population selection
@@ -45,6 +40,7 @@ On a Mac, perform gene annotation using the following command:
 ```bash
 magma --annotate --snp-loc g1000_eas.bim --gene-loc gene.loc --out [OUTPUT_PREFIX]
 ```
+---
 ## 🧬 GENE-BASED ANALYSIS
 ### ⚠️ Notice:
 1. Consistency between reference sample and annotation: We used a reference sample named g1000_eas, which is data for the East Asian population. For accurate results, ensure that the annotation file is consistent with the population source of the reference sample.
@@ -53,6 +49,7 @@ magma --annotate --snp-loc g1000_eas.bim --gene-loc gene.loc --out [OUTPUT_PREFI
 ```bash
 magma --bfile g1000_eas --pval SNP N=8436 --gene-annot g1000_eas.genes.annot --out genebased
 ```
+---
 ## 🔓 Interpretation of gene-based association analysis results
 - **GENE**: the gene ID as specified in the annotation file
 - **CHR**: the chromosome the gene is on
@@ -62,7 +59,7 @@ magma --bfile g1000_eas --pval SNP N=8436 --gene-annot g1000_eas.genes.annot --o
 - **N**: the sample size used when analysing that gene; can differ for allosomal chromosomes or when analysing SNP p-value input with variable sample size by SNP (due to missingness or differences in coverage in meta-analysis)
 - **ZSTAT**: the Z-value for the gene, based on its (permutation) p-value; this is what is used as the measure of gene association in the gene-level analyses
 - **P**: the gene p-value
-
+---
 ## 📈 gene-set enrichment analysis (GSEA)
 On Mac, performing MAGMA-based gene-set enrichment analysis (GSEA) involves the following steps:
 1. Gene score calculation: First, a score is calculated for each gene based on the results of gene association analysis.
@@ -90,7 +87,7 @@ magma --gene-set [GENE_SET_FILE] --gene-scores [GENE_SCORES_OUTPUT_FILE] --out [
 - **P**: The p-value for the gene set's enrichment.
 - **NROT**: The number of rotations (or permutations) that were run.
 - **P_BONF**: The Bonferroni-corrected p-value.
-
+---
 ## 🧬 GENE-PROPERTY ANALYSIS
 ### ⚠️ Notice:
 1. [GENE_PROPERTY_FILE] is a file containing gene property information.
@@ -107,7 +104,7 @@ magma --gene-property [GENE_PROPERTY_FILE] --gene-scores [GENE_SCORES_OUTPUT_FIL
 - **P**: The p-value for the gene property's association with the trait.
 - **NROT**: The number of rotations (or permutations) that were run.
 - **P_BONF**: The Bonferroni-corrected p-value.
-
+---
 ## 🔗 Links and Resources
 - 🙏 [MAGMA Software, Resources & GWAS SumstatsSoftware, Resources & GWAS Sumstats](https://ctg.cncr.nl/software/magma)
 - 📖 [MAGMA User Manual](https://ctg.cncr.nl/software/MAGMA/doc/manual_v1.10.pdf)
