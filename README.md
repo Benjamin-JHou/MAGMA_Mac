@@ -2,6 +2,27 @@
 
 MAGMA_Mac is an extensively used tool for gene-based analysis, gene-set enrichment analysis, and gene property analysis. 
 
+# MAGMA Gene Visualization Guide 🌋
+
+This guide provides an overview of the visualization techniques used for the gene identity analysis and Gene Ontology (GO) enrichment results based on the MAGMA analysis.
+
+## Gene Identity Analysis
+
+The gene identity analysis visualizes the gene expression levels across different tissue types. The visualization highlights the average expression values and uses a brown line to indicate the Bonferroni threshold. Genes with expression levels above this threshold are of particular interest, as they may be more strongly associated with the phenotype under study.
+
+[🔗 View the Gene Identity Analysis Script](https://github.com/Benjamin-JHou/MAGMA_Mac/blob/main/gene_identity.R)
+
+## Gene Ontology (GO) Enrichment
+
+The GO enrichment visualization helps in understanding the functional aspects of the genes of interest. It categorizes genes based on their involvement in various biological processes, cellular components, and molecular functions. Genes are grouped by their GO terms, and the significance of each term is denoted by its p-value. A brown line on the visualization represents the Bonferroni threshold, aiding in the identification of significantly enriched terms.
+
+[🔗 View the GO Enrichment Script](https://github.com/Benjamin-JHou/MAGMA_Mac/blob/main/GO_enrichment.R)
+
+---
+
+For more details on MAGMA and its applications, refer to the official [MAGMA documentation](https://ctg.cncr.nl/software/magma).
+
+
 ## 📊 Required data: a file containing SNP locations and a file containing gene locations.
 
 ## 🍏 Installing MAGMA on Mac
